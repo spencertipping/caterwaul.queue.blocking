@@ -1,7 +1,7 @@
 // Simple blocking queue tests
 
 caterwaul.clone('std', 'error', 'queue.blocking')(function () {
-  var q = this[caterwaul].queue.blocking(3, {empty: fn_[empty()]}), callbacks = {}, empty = null;
+  var q = caterwaul.queue.blocking(3, {empty: fn_[empty()]}), callbacks = {}, empty = null;
 
   q(fn[free_cc][callbacks.first = free_cc]);
   callbacks.first || error.fail['Failed to synchronously invoke the first callback on an empty queue'];

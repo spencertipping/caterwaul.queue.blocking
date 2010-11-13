@@ -28,7 +28,7 @@
 
 caterwaul.tconfiguration('std', 'queue.blocking', function () {
   (this.queue || this.shallow('queue', {}).queue).blocking(n, options) =
-  let*[used = 0, waiting = [], deallocate() = waiting.length ? waiting.shift()(deallocate) : --used || options.empty && options.empty()] in
+  let*[used = 0, waiting = [], deallocate() = waiting.length ? waiting.shift()(deallocate) : --used || options && options.empty && options.empty()] in
   fn[cc][used < n ? (++used, cc(deallocate)) : waiting.push(cc)];
 });
 
